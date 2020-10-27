@@ -8,6 +8,8 @@ openapi-generator generate -g aspnetcore \
   --additional-properties packageName=Com.RedHat.TodoList \
   --additional-properties packageTitle=TodoList \
   --additional-properties useFrameworkReference=true \
+  --additional-properties returnICollection=true \
+  --additional-properties operationResultTask=true \
   -i todo_openapi.yaml \
   -o $(pwd) 
 
