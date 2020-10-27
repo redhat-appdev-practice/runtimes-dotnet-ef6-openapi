@@ -1,0 +1,25 @@
+---
+version: "3.8"
+services:
+  tododb:
+    image: docker.io/postgres:latest
+    ports:
+    - "5432:5432"
+    environment:
+      POSTGRES_USER: tododb
+      POSTGRES_PASSWORD: tododb
+      POSTGRES_DB: todo
+  todoapi:
+    image: registry.redhat.io/ubi8/dotnet-31
+    ports:
+    - "8080:8080"
+    working_dir: /workspace/src/Com.RedHat.TodoList
+    user: ${CONTAINER_UID:-1000}
+    volumes:
+    - ./:/workspace
+    - ./composesettings.json:/tmp/runtimesettings.json
+    command:
+      - dotnet
+      - run
+    links:
+      - tododb
