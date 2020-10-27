@@ -1,0 +1,4 @@
+[submodule "openapi-generator-aspnetcore3-templates"]
+	path = openapi-generator-aspnetcore3-templates
+  branch = trunk
+	url = git@github.com:redhat-appdev-practice/openapi-generator-aspnetcore3-templates
