@@ -1,0 +1,24 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: {{ include "openapi-aspnetcore-ef6.fullname" . }}
+  labels:
+    {{- include "openapi-aspnetcore-ef6.labels" . | nindent 4 }}
+  annotations:
+    {{- with .Values.ingress.annotations }}
+    annotations:
+      {{- toYaml . | nindent 4 }}
+    {{- end }}
+data:
+  runtimesettings.json: |-
+    {
+      "ConnectionStrings": {
+        "DefaultConnection": "User ID={{ .Values.postgresql.postgresqlUsername }};Password={{ .Values.postgresql.postgresqlPassword }};Server={{ .Values.postgresql.nameOverride }};Port=5432;Database={{ .Values.postgresql.postgresqlDatabase }}"
+      },
+      "Logging": {
+        "LogLevel": {
+          "Default": "Warning"
+        }
+      },
+      "AllowedHosts": "*"
+    }
