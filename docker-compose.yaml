@@ -13,11 +13,11 @@ services:
     image: registry.redhat.io/ubi8/dotnet-31
     ports:
     - "8080:8080"
-    working_dir: /workspace/src/Com.RedHat.TodoList
+    working_dir: /workspace/src/RedHat.TodoList
     user: ${CONTAINER_UID:-1000}
     volumes:
     - ./:/workspace
-    - ./composesettings.json:/tmp/runtimesettings.json
+    - ./tmp:/tmp
     command:
       - dotnet
       - run
