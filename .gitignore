@@ -1,0 +1,11 @@
+/RedHat.TodoList.sln
+/README.md
+/nohup.out
+/build.sh
+/build.bat
+/.openapi-generator*
+src/**/*
+.nuget
+.idea
+!tmp/runtimesettings.json
+tmp/**/*
