@@ -13,7 +13,7 @@ data:
   runtimesettings.json: |-
     {
       "ConnectionStrings": {
-        "DefaultConnection": "User ID={{ .Values.postgresql.postgresqlUsername }};Password={{ .Values.postgresql.postgresqlPassword }};Server={{ .Values.postgresql.nameOverride }};Port=5432;Database={{ .Values.postgresql.postgresqlDatabase }}"
+        "DefaultConnection": "User ID={{ .Values.postgresql.postgresqlUsername }};Password={{ .Values.postgresql.postgresqlPassword }};Server=testing-todo;Port=5432;Database={{ .Values.postgresql.postgresqlDatabase }}"
       },
       "Logging": {
         "LogLevel": {
