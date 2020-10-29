@@ -10,6 +10,8 @@ postgresql:
   postgresqlPassword: tododb
   nameOverride: todo
   fullnameOverrid: todo
+  securityContext:
+    enabled: false
 
 image:
   repository: quay.io/josphill/openapi-aspnetcore-ef6-todo-demo
